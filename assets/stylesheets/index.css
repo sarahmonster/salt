@@ -69,13 +69,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-@import "./elements";
+@import "./global/elements";
 
 
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-@import "./forms.css";
+@import "./components/forms";
 
 
 /*--------------------------------------------------------------
@@ -90,24 +90,25 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Menus
 --------------------------------------------------------------*/
 @import "./components/navigation-menu";
+@import "./components/article-navigation";
 
 
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
-@import "./accessibility.css";
+@import "./global/accessibility.css";
 
 
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
-@import "./alignments.css";
+@import "./global/alignments.css";
 
 
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-@import "./widgets.css";
+@import "./components/widgets.css";
 
 
 /*--------------------------------------------------------------
@@ -119,19 +120,19 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-@import "./comments.css";
+@import "./components/comments.css";
 
 
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-@import "./infinite-scroll.css";
+@import "./components/infinite-scroll.css";
 
 
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-@import "./media.css";
+@import "./components/media.css";
 
 
 /*--------------------------------------------------------------
@@ -143,7 +144,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
-@import "./galleries.css";
+@import "./components/galleries.css";
 
 /*--------------------------------------------------------------
 ## Gutenberg blocks
