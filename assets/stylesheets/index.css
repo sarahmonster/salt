@@ -75,7 +75,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-//@import "./components/forms";
+@import "./components/forms";
 
 
 /*--------------------------------------------------------------
@@ -115,6 +115,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Articles
 --------------------------------------------------------------*/
 @import "./components/article-header.css";
+@import "./components/article.css";
 
 
 /*--------------------------------------------------------------

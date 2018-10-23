@@ -1,0 +1,34 @@
+.entry-content {
+  max-width: $size__content-width;
+  padding: 0 calc($size__site-gutter / 2);
+
+  @mixin tablet {
+    padding: 0 calc($size__site-gutter * 2);
+  }
+}
+
+/* Add drop caps, in case we forgot to. */
+.single:not(.single-wanderlist-location) .entry-content > p:first-of-type,
+.tax-talks .entry-content p:first-of-type:not(.wp-block-caption) {
+  @mixin drop-cap;
+}
+
+
+.entry-content a {
+  @mixin link-gradient;
+}
+
+
+
+// Style Wanderlist text snippets
+.wanderlist-country-count {
+  color: $color__accent-alt;
+  font-weight: bolder;
+  font-size: 1.5em;
+  line-height: 1;
+}
+
+.wanderlist-current-location {
+  color: $color__accent-alt;
+  font-style: italic;
+}
