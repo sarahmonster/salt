@@ -1,0 +1,110 @@
+/* Navigation */
+.menu {
+	@mixin font-size 1;
+	font-weight: 600;
+	letter-spacing: 0.05em;
+	font-family: $font__accent;
+	width: $size__content-width;
+	max-width: 100%;
+	vertical-align: top;
+	padding: calc($size__site-gutter / 2) 0;
+	text-transform: uppercase;
+	display: flex;
+	flex-wrap:  nowrap;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+
+	@mixin tablet {
+		justify-content: center;
+		padding: calc($size__site-gutter / 2) calc($size__site-gutter * 2);
+	}
+}
+
+.menu-item {
+	margin: 0 calc($size__site-gutter / 2) 0 calc($size__site-gutter / 2 * -1);
+	align-items: center;
+	display: flex;
+
+	&::before {
+		content: '\00b7';
+		display: inline;
+	}
+
+	&:first-child::before {
+		display: none;
+	}
+}
+
+.menu-item a {
+	text-decoration: none;
+	color: $color__black;
+	display: inline-block;
+	padding: calc($size__site-gutter / 8) calc($size__site-gutter / 2);
+
+	&:hover {
+		color: $color__primary-dark;
+	}
+}
+
+.current-menu-item a {
+	color: $color__primary-dark;
+}
+
+/* On small screens, decrease space between menu items. */
+@mixin mobile {
+	.main-navigation {
+		position: relative;
+		white-space: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		margin: -20px;
+		width: calc(100% + 40px);
+
+		&::after,
+		&::before {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			width: 25px;
+			height: 120px;
+			display: block;
+			content: '';
+		}
+
+		&::before {
+			background-image: linear-gradient(to left, rgba(255, 255, 255, 0), $color__background-body 100%);
+			left: 0;
+		}
+
+		&::after {
+			background-image: linear-gradient(to right, rgba(255, 255, 255, 0), $color__background-body 100%);
+			right: 0;
+		}
+
+		.nav-menu::-webkit-scrollbar {
+			display: none;
+		}
+	}
+
+	.menu-item {
+		margin: 0 6px 0 -6px;
+
+		&:first-of-type {
+			padding-left: calc($size__site-gutter / 2);
+			margin-left: 0;
+		}
+
+		&:last-of-type {
+			padding-right: calc($size__site-gutter / 2);
+			margin-right: 0;
+		}
+	}
+
+	.menu-link {
+		@mixin font-size 0.9;
+		padding: 5px 6px;
+	}
+}

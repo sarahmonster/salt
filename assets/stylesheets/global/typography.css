@@ -84,12 +84,10 @@ h3 {
 	}
 }
 
-/* Body copy */
 p {
 	margin: 0 0 calc($size__site-gutter*2);
 }
 
-//Drop caps for older posts with manually applied drop caps.
 .cap {
 	@mixin drop-cap;
 }
