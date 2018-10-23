@@ -1,0 +1,131 @@
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+#wpstats {
+	display: none;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+.jetpack-video-wrapper > embed,
+.jetpack-video-wrapper > iframe,
+.jetpack-video-wrapper > object,
+.jetpack-video-wrapper > .wp-video {
+	margin-bottom: 0;
+}
+
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption,
+figure {
+	margin: $size__site-gutter*2 -#{$size__site-gutter/2};
+	max-width: calc(100% + #{$size__site-gutter});
+
+	img {
+		border-top: 5px solid #fff;
+		border-bottom: 5px solid #fff;
+		@include box-shadow;
+	}
+
+	a,
+	a:hover {
+		text-decoration: none;
+	}
+
+	p {
+		display: none; /* Catch empty paragraphs */
+	}
+}
+
+.wp-caption-text,
+figcaption {
+	border-bottom: 2px solid $color__neutral;
+	color: $color__neutral-text;
+	font-style: italic;
+	padding: $size__site-gutter/4 $size__site-gutter/2 $size__site-gutter/2;
+}
+
+@include tablet {
+
+	.wp-caption,
+	figure {
+		margin-left: -#{$size__site-gutter};
+		margin-right: -#{$size__site-gutter};
+		max-width: calc(100% + #{$size__site-gutter*2});
+
+		img {
+			border: 10px solid #fff;
+		}
+	}
+
+	.wp-caption-text,
+	figcaption {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	background: none;
+	display: inline-block;
+	margin: 0;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+
+	.gallery-columns-2 & {
+		max-width: 50%;
+	}
+
+	.gallery-columns-3 & {
+		max-width: 33.33%;
+	}
+
+	.gallery-columns-4 & {
+		max-width: 25%;
+	}
+
+	.gallery-columns-5 & {
+		max-width: 20%;
+	}
+
+	.gallery-columns-6 & {
+		max-width: 16.66%;
+	}
+
+	.gallery-columns-7 & {
+		max-width: 14.28%;
+	}
+
+	.gallery-columns-8 & {
+		max-width: 12.5%;
+	}
+
+	.gallery-columns-9 & {
+		max-width: 11.11%;
+	}
+}
+
+.gallery-caption {
+	display: block;
+}

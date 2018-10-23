@@ -1,0 +1,88 @@
+$red: #a32020;
+$blue: #3F9CBC;
+$green: #37894c;
+
+$pink: #F26BAF;
+$dark-pink: #B53377;
+$light-pink: #FCACDB;
+$pink-highlight: #F9EAF7;
+
+$teal: #61D2FF;
+$dark-teal: #3C98BC;
+
+$pure-teal: #25E3FF;
+$pure-pink: #FF69B4;
+
+$black: #232024;
+$charcoal: #4B454C;
+$grey: #716E72;
+$silver: #A09CA0;
+$off-white: #E0DEE0;
+$white: #ffffff;
+
+
+// Base colours
+//
+// Our base colours are made up of various shades of grey.
+// They're used pretty heavily throughout to counteract our bright accent colours.
+
+$color__black: $black;
+$color__soft-black: $charcoal;
+$color__neutral: $silver;
+$color__neutral-text: $grey;
+$color__neutral-highlight: $off-white;
+$color__white: $white;
+
+// Primary colours
+//
+// In keeping with the military theme, we use a series of olive-ish greens as the primary accent colour.
+// This is used to distinguish elements (like labels) from their surrounding text, as well as for
+// background colours and the colours of less important elements.
+
+$color__primary: $pink;
+$color__primary-light: $light-pink;
+$color__primary-dark: $dark-pink;
+
+// Accent colours
+//
+// Accent colours are used to highlight important information and to add visual appeal.
+// These provide a contrast to our primary palette.
+
+$color__accent: $teal;
+$color__accent-alt: $dark-teal;
+$color__highlight: $pink-highlight;
+
+// zsg: ignore
+
+// Background & body text
+$color__background-body: $color__white;
+$color__text-main: $charcoal;
+$color__headings: $color__neutral-text;
+
+// Inputs
+$color__border-input: #ccc;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+
+// Buttons
+$color__background-button: #e6e6e6;
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+
+// Misc HTML elements
+$color__background-hr: #ccc;
+$color__background-pre: #eee;
+$color__background-ins: #fff9c0;
+$color__border-abbr: #666;
+
+// Screenreader stuff; best to leave be.
+$color__background-screen: #f1f1f1;
+$color__text-screen: #21759b;
+
+// zsg:endignore
+
+// Links
+$color__link: $color__primary-dark;
+$color__link-visited: $color__link;
+$color__link-hover: $color__accent-alt;

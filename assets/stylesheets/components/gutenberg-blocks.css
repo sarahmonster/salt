@@ -1,0 +1,5 @@
+p.has-drop-cap:not(.focus) {
+	@mixin drop-cap;
+}
+
+

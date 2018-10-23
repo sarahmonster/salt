@@ -1,0 +1,38 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@define-mixin mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @mixin-content;
+  }
+}
+
+@define-mixin tablet {
+  @media (min-width: $tablet-width) {
+    @mixin-content;
+  }
+}
+
+@define-mixin desktop {
+  @media (min-width: $desktop-width) {
+    @mixin-content;
+  }
+}
+
+@define-mixin desktop-max {
+  @media (max-width: calc($desktop-width - 1px)) {
+    @mixin-content;
+  }
+}
+
+@define-mixin portrait {
+  @media (orientation : portrait) {
+    @mixin-content;
+  }
+}
+
+@define-mixin landscape {
+  @media (orientation : landscape) {
+    @mixin-content;
+  }
+}

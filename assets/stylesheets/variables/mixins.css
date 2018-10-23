@@ -1,0 +1,229 @@
+// Rem output with px fallback
+@define-mixin font-size $size: 1 {
+	font-size: calc($size * 16 * 1px);
+	font-size: calc($size * 1rem);
+}
+
+
+// Drop caps
+ //
+ // Used to provide emphasis and visual interest. Applied to the first paragraph
+ // of every post by default, but can also be applied manually by adding the `cap` class.
+ //
+ // markup:
+ // <p class="has-drop-cap">This is a paragraph using a drop-cap. It will look best when it's long enough that the text wraps.</p>
+ //
+ // Styleguide 2.2
+@define-mixin drop-cap {
+	&::first-letter {
+		color: $color__neutral;
+		display: block;
+		float: left;
+		@mixin font-size 7.3;
+		font-family: $font__display;
+		font-weight: 400;
+		line-height: 0.85;
+		margin: .12em .1em -.2em -.05em;
+		-webkit-appearance: none;
+
+		@mixin tablet {
+			@mixin font-size 12.3;
+			margin: 0.08em .1em -.125em -.05em;
+		}
+	}
+
+	&::first-line {
+		font-variant: small-caps;
+		letter-spacing: 2px;
+	}
+
+	&::after {
+		display: table;
+		clear: both;
+		content: '';
+	}
+}
+
+// Center block
+@define-mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@define-mixin desaturate $dark: false {
+	//filter: grayscale(100%) brightness(0.3) contrast(1.25);
+	filter: grayscale(100%) brightness(1.8) contrast(1.25);
+}
+
+@define-mixin box-shadow {
+	box-shadow: 1px 1px 3px transparentize($color__neutral, 0.5);
+}
+
+// A card element, used to show contained bits of information.
+//
+// :hover             - Subtle hover highlight.
+// .stars-given       - A highlight indicating you’ve already given a star.
+// .stars-given:hover - Subtle hover highlight on top of stars-given styling.
+// .disabled          - Dims the button to indicate it cannot be used.
+//
+// Styleguide 3.1
+@define-mixin card {
+	@mixin box-shadow;
+	background: $color__white;
+	margin: 0 0 $size__site-gutter/2 0;
+	padding: $size__site-gutter/2;
+}
+
+@define-mixin small-caps {
+	font-family: $font__accent;
+	@mixin font-size 0.8;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin: 0;
+	text-transform: uppercase;
+
+	@mixin tablet {
+		@mixin font-size 0.9;
+	}
+}
+
+
+// A skewed edge, used to make containers look funkier.
+// Courtesy of http://www.hongkiat.com/blog/skewed-edges-css/
+@define-mixin angled-edge $position, $angle {
+	width: 100%;
+	position: relative;
+
+	&::before,
+	&::after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		right: 0;
+		position: absolute;
+		background: inherit;
+		z-index: -1;
+		transition: ease all .5s;
+	}
+
+    @if $position == 'topleft' {
+		&::before {
+        	top: 0;
+        	transform-origin: right top;
+        	transform: skewY($angle);
+      	}
+
+		&::after {
+			display: none;
+		}
+	}
+
+    @if $position == 'topright' {
+		&::before {
+	        top: 0;
+	        transform-origin: left top;
+	        transform: skewY(-$angle);
+		}
+
+		&::after {
+			display: none;
+		}
+    }
+
+    @if $position == 'bottomleft' {
+		&::after {
+	        bottom: 0;
+	        transform-origin: right bottom;
+	        transform: skewY(-$angle);
+      	}
+
+		&::before {
+			display: none;
+		}
+	}
+
+    @if $position == 'bottomright' {
+		&::after {
+	        bottom: 0;
+	        transform-origin: left bottom;
+	        transform: skewY($angle);
+      	}
+
+		&::before {
+			display: none;
+		}
+    }
+}
+
+// Apply a rainbowy gradient to text elements.
+@define-mixin text-gradient {
+	background: $color__primary;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, $color__accent, $color__primary);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, $color__accent, $color__primary); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+// Styling for page headers, used for pages as well as single entry pages.
+@define-mixin page-header {
+	@mixin angled-edge(bottomright, 4deg);
+	background: $color__black;
+	position: relative;
+	padding: $size__site-gutter/2;
+	z-index: 0;
+
+	@mixin tablet {
+		padding: $size__site-gutter*2;
+	}
+
+	.page-title,
+	.entry-title {
+		@mixin text-gradient;
+		padding: 35px 0; // Avoids text being cut off in FF.
+	}
+}
+
+// Better text underlines, because that's how I roll.
+@define-mixin underline $line-color, $text-color {
+	text-decoration: none;
+	text-shadow: .03em 0 $text-color, -.03em 0 $text-color, 0 .03em $text-color, 0 -.03em $text-color, .06em 0 $text-color, -.06em 0 $text-color, .09em 0 $text-color, -.09em 0 $text-color, .12em 0 $text-color, -.12em 0 $text-color, .15em 0 $text-color, -.15em 0 $text-color;
+	background-image:
+		linear-gradient($text-color, $text-color),
+		linear-gradient($text-color, $text-color),
+		linear-gradient($line-color, $line-color);
+	background-size: .05em 2px, .05em 2px, 2px 2px;
+	background-repeat: no-repeat, no-repeat, repeat-x;
+	background-position: 0% 90%, 100% 90%, 0% 95%;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-image: linear-gradient(to right, $color__link-hover 0%, $color__link-hover 100%);
+		background-size: 2px 2px;
+		background-repeat: repeat-x;
+		background-position: 0% 95%;
+		//text-shadow: none;
+	}
+}
+
+@define-mixin link-gradient {
+	display: inline-block;
+    background-color: $color__link;
+    background-image: linear-gradient(to right, $color__link 0%, $color__link-hover 50%, rgba(255, 255, 255, 0) 50%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    color: rgba(255, 255, 255, 0);
+    transition: .1s .2s;
+    background-clip: text;
+    -webkit-background-clip: text;
+   	//-webkit-text-fill-color: $color__link;
+
+  	&:hover {
+	    background-position: 0 0;
+	    color: rgba(255, 255, 255, 0);
+	    transition: .2s 0;
+  	}
+}

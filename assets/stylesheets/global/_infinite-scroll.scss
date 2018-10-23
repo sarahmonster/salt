@@ -1,0 +1,66 @@
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/* Click-to-scroll button */
+#infinite-handle {
+  clear: both;
+  padding: 1em 0;
+  text-align: center;
+
+  span {
+    background: none;
+    @include font-size(1.4);
+    padding: 10px 20px;
+
+    &::before,
+    &::after {
+      color: lighten($color__text-main, 60%);
+      display: inline;
+      font-size: 1.8em;
+      padding: 5px;
+      vertical-align: -5px;
+    }
+
+    &::before {
+      content: '{';
+    }
+
+    &::after {
+      content: '}';
+    }
+
+    button {
+      background: none;
+      box-shadow: none;
+      color: lighten($color__text-main, 40%);
+      font-style: italic;
+      padding: 0 10px;
+      transition: all 200ms linear;
+    }
+
+    &:hover {
+      button {
+        @include font-size(1.6);
+        color: lighten($color__text-main, 60%);
+      }
+    }
+  }
+}
+
+/* Loading icon */
+.infinite-loader {
+  clear: both;
+  text-align: center;
+}
+
+.infinite-loader .spinner {
+  left: 50% !important; /* ..because the Jetpack CSS is inline */
+}
