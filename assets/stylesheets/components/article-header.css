@@ -1,0 +1,72 @@
+/* Use a fancy article header for posts. */
+.single .entry-header {
+	text-align: center;
+	border-bottom: 3px solid $color__neutral;
+	margin: $size__site-gutter calc($size__site-gutter / 2) $size__site-gutter;
+
+	@mixin tablet {
+		margin: calc($size__site-gutter * 3) calc($size__site-gutter / 2) calc($size__site-gutter * 3);
+	}
+
+	.entry-meta {
+		@mixin small-caps;
+		color: $color__neutral-text;
+		position: relative;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 50%;
+			border-bottom: 2px solid $color__neutral;
+		}
+
+		.entry-date {
+			color: $color__neutral-text;
+			display: inline-block;
+			padding: 0 20px;
+			background: $color__background-body;
+			position: relative;
+			text-decoration: none;
+		}
+	}
+
+	.entry-title {
+		@mixin text-gradient;
+	}
+
+	.entry-meta, 
+	.entry-title {
+		margin-bottom: $size__site-gutter/2;
+
+		@mixin tablet {
+			margin-bottom: $size__site-gutter;
+		}
+	}
+}
+
+/* Pages (hide title) */
+.page .entry-header {
+	height: calc($size__site-gutter * 2);
+
+	@mixin tablet {
+		height: calc($size__site-gutter * 4);
+	}
+
+	.entry-title {
+		display: none;
+	}
+}
+
+/* Homepage */
+.intro .entry-header {
+	border: 0;
+}
+
+/* This goes on the article archive page! */
+.entry-title a {
+	//@mixin underline($color__link, $color__white);
+	@mixin link-gradient;
+}
