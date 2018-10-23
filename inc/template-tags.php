@@ -47,15 +47,14 @@ if ( ! function_exists( 'salt_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'salt' ) );
 			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'salt' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+
+				echo '<span class="category-links">' . $categories_list . '</span>';
 			}
 
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'salt' ) );
+			$tags_list = get_the_tag_list( '', '');
 			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'salt' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				echo '<span class="tag-links">' . $tags_list . '</span>';
 			}
 		}
 	}
