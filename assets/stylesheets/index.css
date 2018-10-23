@@ -41,23 +41,29 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 
+@import "variables/mixins";
+@import "variables/breakpoints";
+@import "variables/colors";
+@import "variables/typography";
+@import "variables/structure";
+
 
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import "./normalize.css";
+@import "./vendor/normalize";
 
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@import "./typography.css";
+@import "./global/typography";
 
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-@import "./elements.css";
+@import "./elements";
 
 
 /*--------------------------------------------------------------
@@ -138,3 +144,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Galleries
 --------------------------------------------------------------*/
 @import "./galleries.css";
+
+/*--------------------------------------------------------------
+## Gutenberg blocks
+--------------------------------------------------------------*/
+@import "./components/gutenberg-blocks";

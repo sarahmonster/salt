@@ -126,43 +126,37 @@ function salt_content_width() {
 add_action( 'after_setup_theme', 'salt_content_width', 0 );
 
 /**
- * Register Google Fonts
+ * Enqueue Typekit fonts
+ *
+ * @action wp_head
+ * @return string
  */
-function salt_fonts_url() {
-	$fonts_url = '';
-
-	/*
-	 *Translators: If there are characters in your language that are not
-	 * supported by Noto Serif, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$notoserif = esc_html_x( 'on', 'Noto Serif font: on or off', 'salt' );
-
-	if ( 'off' !== $notoserif ) {
-		$font_families = array();
-		$font_families[] = 'Noto Serif:400,400italic,700,700italic';
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
-
-	return $fonts_url;
-
+function salt_fonts() {
+	$kit = 'rmt3uuy';
+	?>
+	<script>
+	    // try{!function(t,e,n,r,a,s,i,l)
+	</script>
+	<script>
+	(function(d) {
+	var config = {
+		kitId: '<?php echo $kit; ?>',
+		scriptTimeout: 3000
+	},
+	h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+	})(document);
+</script>
+	<?php
 }
+add_action( 'wp_head', 'salt_fonts', 20 );
 
 /**
  * Enqueue scripts and styles.
  */
 function salt_scripts() {
-	wp_enqueue_style( 'gutenbergbase-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'salt-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'saltblocks-style', get_template_directory_uri() . '/css/blocks.css' );
-
-	wp_enqueue_style( 'salt-fonts', salt_fonts_url() );
+	wp_enqueue_script( 'salt-typekit-cache', get_template_directory_uri() . '/js/typekit-cache.js', array(), '20181023', true );
 
 	wp_enqueue_script( 'salt-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

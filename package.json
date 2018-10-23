@@ -5,10 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "autoprefixer": "^9.2.1",
+    "postcss": "^7.0.5",
     "postcss-extend": "^1.0.5",
     "postcss-import": "^12.0.0",
     "postcss-mixins": "^6.2.0",
     "postcss-nested": "^4.1.0",
+    "postcss-scss": "^2.0.0",
     "postcss-simple-vars": "^5.0.1"
   },
   "devDependencies": {
@@ -16,7 +18,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postcss": "postcss assets/stylesheets/index.css --use autoprefixer postcss-import postcss-simple-vars postcss-extend postcss-nested postcss-mixins -o style.css",
+    "postcss": "postcss assets/stylesheets/index.css --use autoprefixer postcss-import postcss-mixins postcss-simple-vars postcss-extend postcss-nested --syntax postcss-scss -o style.css",
     "postcss:watch": "npm run postcss -- -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
