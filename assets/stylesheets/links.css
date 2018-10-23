@@ -1,0 +1,19 @@
+a {
+  color: #0073aa;
+}
+
+a:visited {
+  color: #333;
+}
+
+a:hover, a:focus, a:active {
+  color: #00a0d2;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover, a:active {
+  outline: 0;
+}
