@@ -13,14 +13,12 @@
 
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', '_s' ) ); ?>"><?php
-			/* translators: %s: CMS name, i.e. WordPress. */
-			printf( esc_html__( 'Proudly powered by %s', 'salt' ), 'WordPress' );
-		?></a>
-		<span class="sep"> | </span>
 		<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %s', 'salt' ), '<a href="https://github.com/WordPress/gutenberg-starter-theme/">Gutenberg</a>' );
+			printf( esc_html__( 'Made with ❤️ and %s', 'salt' ), '<a href="https://wordpress.org">WordPress</a>' );
+		?>
+		<span class="sep"> · </span>
+		<?php
+			printf( esc_html__( 'Theme on %s', 'salt' ), '<a href="https://github.com/sarahmonster/salt/">Github</a>' );
 		?>
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->

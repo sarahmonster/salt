@@ -6,4 +6,36 @@ body {
 	background: $color__background-body;
 	margin: 0 auto;
 	max-width: $size__content-width;
+	padding: calc($size__site-gutter / 2);
+}
+
+.site-branding, .site-logo-link {
+	display: none;
+}
+
+.site-footer {
+	color: $silver;
+	@mixin font-size 1;
+	font-style: italic;
+	padding-top: calc($size__site-gutter / 2);
+	margin: 0 calc($size__site-gutter / 2) 0;
+	text-align: center;
+
+	@mixin tablet {
+		margin: 0 calc($size__site-gutter * 2) 0;
+		padding-top: calc($size__site-gutter / 2);
+	}
+
+	a {
+		color: $color__primary-dark;
+		border-color: transparent;
+
+		&:hover {
+			border-color: $silver;
+		}
+	}
+
+	.emoji {
+		font-style: normal;
+	}
 }
