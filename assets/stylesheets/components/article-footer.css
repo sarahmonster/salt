@@ -16,6 +16,11 @@
 	&:hover {
 		color: $color__white;
 	}
+
+	&::before {
+		content: '#';
+		display: inline;
+	}
 }
 
 .tag-links a {
@@ -28,6 +33,11 @@
 
 	&:hover {
 		color: $color__white;
+	}
+
+	&::before {
+		content: '#';
+		display: inline;
 	}
 }
 
