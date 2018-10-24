@@ -45,9 +45,8 @@ if ( ! function_exists( 'salt_entry_footer' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'salt' ) );
+			$categories_list = get_the_category_list( esc_html__( '&#8203;', 'salt' ) );
 			if ( $categories_list ) {
-
 				echo '<span class="category-links">' . $categories_list . '</span>';
 			}
 
