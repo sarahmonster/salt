@@ -1,18 +1,48 @@
-.wp-caption {
-  margin-bottom: 1.5em;
-  max-width: 100%;
-}
+.entry-content {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
-.wp-caption img[class*="wp-image-"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+  figure,
+  .wp-caption {
+	line-height: 0;
+	margin: 0 0 $size__site-gutter;
+	max-width: 100%;
 
-.wp-caption .wp-caption-text {
-  margin: 0.8075em 0;
-}
+	a {
+		background: none;
+		padding: 0;
+		margin: 0;
+		display: block;
+	}
+  }
 
-.wp-caption-text {
-  text-align: center;
+  figcaption,
+  .wp-caption-text {
+    @mixin font-size 1.2;
+	color: $color__neutral-text;
+	font-style: italic;
+	line-height: 1.4;
+	margin: 0;
+    width: 100%;
+  }
+
+  @mixin tablet {
+    figure,
+    .wp-caption {
+        position: relative;
+        margin: 0 calc($size__site-gutter * -1) $size__site-gutter;
+        max-width: calc(100% + $size__site-gutter * 2);
+    }
+
+    figcaption,
+    .wp-caption-text {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: $color__white;
+        padding: calc($size__site-gutter / 2);
+    }
+  }
 }
