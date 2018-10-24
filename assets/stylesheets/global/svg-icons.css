@@ -4,7 +4,7 @@
 }
 
 /* Default colouration & size */
-.phoenix-icon {
+.salt-icon {
 	fill: currentColor;
 	height: 28px;
 	width: 28px;
@@ -12,7 +12,6 @@
 
 /* Social menu */
 .menu-social-menu-container ul {
-
 	ul {
 		list-style: none;
 		margin: 0;

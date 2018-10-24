@@ -73,6 +73,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 
 
 /*--------------------------------------------------------------
+# SVG icons
+--------------------------------------------------------------*/
+@import "./global/svg-icons";
+
+
+/*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
 @import "./components/forms";
@@ -148,6 +154,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Galleries
 --------------------------------------------------------------*/
 @import "./components/galleries.css";
+
 
 /*--------------------------------------------------------------
 ## Gutenberg blocks

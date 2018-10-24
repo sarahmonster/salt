@@ -1,26 +1,81 @@
-.site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
-  border-bottom: 1px solid #111;
-	margin: 0 auto 60px;
-	overflow: hidden;
-  padding-bottom: 60px;
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+	padding-bottom: $size__site-gutter;
+	line-height: 1.2;
+	position: relative;
+
+	a {
+		text-decoration: none;
+		@mixin link-gradient;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.salt-icon {
+		display: block;
+		background: $black;
+		//border: 2px solid $white;
+		border-radius: 50%;
+		box-shadow: 0 0 0px 2px lighten($black, 20%);
+		fill: $white;
+		height: 40px;
+		line-height: 1;
+		padding: 3px;
+		transition: all 200ms linear;
+		width: 40px;
+		position: absolute;
+	}
+
+	&:hover .salt-icon {
+		background: lighten($black, 10%);
+	}
+
+	.post-navigation-description {
+		@mixin small-caps;
+		color: $color__text-main;
+		display: block;
+	}
 }
 
-.nav-links {
-	display: flex;
+
+
+.nav-previous {
+	padding-left: 50px;
+
+	.salt-icon {
+		left: 0;
+	}
 }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-	width: 50%;
-	flex: 1 0 50%;
-}
-
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
+.nav-next {
 	text-align: end;
-	flex: 1 0 50%;
+	padding-right: 50px;
+
+	.salt-icon {
+		right: 0;
+		transform: rotate(180deg);
+	}
+}
+
+@mixin mobile {
+	.nav-previous + .nav-next {
+		margin-top: $size__site-gutter;
+	}
+}
+
+@mixin tablet {
+	.nav-links {
+		display: flex;
+	}
+
+	.nav-previous {
+		width: 50%;
+		flex: 1 0 50%;
+	}
+
+	.nav-next {
+			flex: 1 0 50%;
+	}
 }
