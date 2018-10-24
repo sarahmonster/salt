@@ -1,4 +1,5 @@
-.single .entry-content {
+.single .entry-content,
+.page .entry-content {
   margin: 0 auto;
   max-width: $size__content-width;
 }
