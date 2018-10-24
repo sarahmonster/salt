@@ -5,8 +5,12 @@ body {
 .site {
 	background: $color__background-body;
 	margin: 0 auto;
-	max-width: $size__content-width;
+	max-width: $size__max-content-width;
 	padding: calc($size__site-gutter / 2);
+
+	@mixin tablet {
+		padding: $size__site-gutter;
+	}
 }
 
 .site-branding, .site-logo-link {

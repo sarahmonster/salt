@@ -1,13 +1,8 @@
 .entry-footer {
-	padding: 0 calc($size__site-gutter / 2);
-	margin-bottom: $size__site-gutter;
+	margin: 0 auto calc($size__site-gutter * 2);
+	max-width: $size__content-width;
 	display: flex;
-	max-width: 100%;
 	flex-wrap: wrap;
-
-	@mixin tablet {
-		padding: 0 calc($size__site-gutter * 2);
-	}
 }
 
 .category-links a {

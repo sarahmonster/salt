@@ -2,10 +2,10 @@
 .single .entry-header {
 	text-align: center;
 	border-bottom: 3px solid $color__neutral;
-	margin: $size__site-gutter calc($size__site-gutter / 2) $size__site-gutter;
+	margin: $size__site-gutter 0;
 
 	@mixin tablet {
-		margin: calc($size__site-gutter * 3) calc($size__site-gutter / 2) calc($size__site-gutter * 3);
+		margin: calc($size__site-gutter * 3) 0;
 	}
 
 	.entry-meta {
@@ -65,8 +65,3 @@
 	border: 0;
 }
 
-/* This goes on the article archive page! */
-.entry-title a {
-	//@mixin underline($color__link, $color__white);
-	@mixin link-gradient;
-}

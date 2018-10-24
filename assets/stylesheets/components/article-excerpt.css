@@ -1,0 +1,10 @@
+.blog .hentry {
+	margin: 0 auto;
+	max-width: $size__content-width;
+}
+
+.entry-title a {
+	@mixin link-gradient;
+}
+
+

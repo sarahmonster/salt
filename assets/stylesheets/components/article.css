@@ -1,10 +1,6 @@
-.entry-content {
+.single .entry-content {
+  margin: 0 auto;
   max-width: $size__content-width;
-  padding: 0 calc($size__site-gutter / 2);
-
-  @mixin tablet {
-    padding: 0 calc($size__site-gutter * 2);
-  }
 }
 
 /* Add drop caps, in case we forgot to. */
