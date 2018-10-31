@@ -216,9 +216,13 @@
     background-position: 100% 0;
     background-size: 200% 200%;
     color: rgba(255, 255, 255, 0);
+    color: transparent;
     transition: .1s .2s;
     background-clip: text;
     -webkit-background-clip: text;
+
+    background-image: -webkit-gradient(linear, 0% 0%, 100% 0%, from(rgb(181, 51, 119)), color-stop(0.5, rgb(60, 152, 188)), color-stop(0.5, transparent));
+
 
   	&:hover {
 	    background-position: 0 0;
