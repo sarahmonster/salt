@@ -41,7 +41,7 @@
 
 	.entry-meta, 
 	.entry-title {
-		margin-bottom: $size__site-gutter/2;
+		margin-bottom: calc($size__site-gutter / 2);
 
 		@mixin tablet {
 			margin-bottom: $size__site-gutter;
@@ -96,7 +96,7 @@
 
 	.nix-prefix, 
 	.page-title {
-		margin-bottom: $size__site-gutter/2;
+		margin-bottom: calc($size__site-gutter / 2);
 
 		@mixin tablet {
 			margin-bottom: $size__site-gutter;
