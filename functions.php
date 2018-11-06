@@ -199,3 +199,10 @@ require get_template_directory() . '/inc/svg-icons.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Load CPTs, custom fields, and custom taxonomies.
+ */
+require get_template_directory() . '/inc/custom-post-types/custom-post-types-register.php';
+require get_template_directory() . '/inc/custom-fields/custom-fields-register.php';
+require get_template_directory() . '/inc/custom-taxonomies/custom-taxonomies-register.php';

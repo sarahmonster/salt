@@ -127,6 +127,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 
 
 /*--------------------------------------------------------------
+## Custom post types
+--------------------------------------------------------------*/
+@import "./components/talks.css";
+
+
+/*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
 @import "./components/comments.css";

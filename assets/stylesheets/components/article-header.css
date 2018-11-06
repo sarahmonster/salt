@@ -1,5 +1,6 @@
 /* Use a fancy article header for posts. */
-.single .entry-header {
+.single .entry-header,
+.archive .page-header {
 	text-align: center;
 	border-bottom: 3px solid $color__neutral;
 	margin: $size__site-gutter 0;
@@ -23,7 +24,8 @@
 			border-bottom: 2px solid $color__neutral;
 		}
 
-		.entry-date {
+		.entry-date,
+		.page-description {
 			color: $color__neutral-text;
 			display: inline-block;
 			padding: 0 20px;
