@@ -1,6 +1,6 @@
 /* Use a fancy article header for posts. */
 .single .entry-header,
-.archive .page-header {
+.page-header {
 	text-align: center;
 	border-bottom: 3px solid $color__neutral;
 	margin: $size__site-gutter 0;
@@ -35,7 +35,8 @@
 		}
 	}
 
-	.entry-title {
+	.entry-title,
+	.page-title {
 		@mixin text-gradient;
 	}
 

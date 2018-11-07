@@ -93,3 +93,13 @@ function salt_numeric_pagination( $page_count = 3, $query = null ) {
 	) );
 	echo '</div>';
 }
+
+/**
+ * Increase the number of posts shown on talks archive page.
+ */
+function salt_archive_query( $query ) {
+if ( $query->is_post_type_archive() && $query->is_main_query() && !is_admin() ) {
+        $query->set( 'posts_per_page', 100 );
+    }
+}
+add_action( 'pre_get_posts', 'salt_archive_query' );
