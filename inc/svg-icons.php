@@ -7,7 +7,7 @@
  *
  * Currently using the <symbol> method of insertion, YMMV.
  */
-$salt_sprite_external = true;
+$salt_sprite_external = false;
 /*
  * Inject our SVG sprite at the bottom of the page.
  *
