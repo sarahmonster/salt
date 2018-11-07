@@ -50,6 +50,10 @@
 	}
 }
 
+.updated:not(.published) {
+  display: none;
+}
+
 .page-header {
 	text-align: center;
 	border-bottom: 3px solid $color__neutral;
