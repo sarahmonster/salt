@@ -1,5 +1,6 @@
 .single .entry-content,
-.page .entry-content {
+.page .entry-content,
+.tax-talks .entry-content {
   margin: 0 auto;
   max-width: $size__content-width;
 }
