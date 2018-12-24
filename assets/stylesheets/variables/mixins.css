@@ -60,21 +60,6 @@
 	box-shadow: 1px 1px 3px transparentize($color__neutral, 0.5);
 }
 
-// A card element, used to show contained bits of information.
-//
-// :hover             - Subtle hover highlight.
-// .stars-given       - A highlight indicating you’ve already given a star.
-// .stars-given:hover - Subtle hover highlight on top of stars-given styling.
-// .disabled          - Dims the button to indicate it cannot be used.
-//
-// Styleguide 3.1
-@define-mixin card {
-	@mixin box-shadow;
-	background: $color__white;
-	margin: 0 0 $size__site-gutter/2 0;
-	padding: $size__site-gutter/2;
-}
-
 @define-mixin small-caps {
 	font-family: $font__accent;
 	@mixin font-size 0.8;
@@ -229,4 +214,11 @@
 	    color: rgba(255, 255, 255, 0);
 	    transition: .2s 0;
   	}
+}
+
+// Apply a card border.
+@define-mixin card {
+	padding: 1em;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.125);
+	width: 100%;
 }

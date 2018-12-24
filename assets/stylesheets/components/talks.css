@@ -10,3 +10,26 @@
 	}
 }
 
+.phoenix-event-list {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+
+	@mixin tablet {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.event {
+	@mixin card;
+
+	.entry-title {
+		margin-top: 0;
+		@mixin font-size 1.6;
+	}
+
+	.salt-event-details {
+		font-family: $font__accent;
+		@mixin font-size 1.125;
+	}
+}
